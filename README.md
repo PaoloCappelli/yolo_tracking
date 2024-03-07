@@ -201,8 +201,6 @@ python tracking/track.py --source 0 --yolo-model yolov8s.pt --classes 16 17  # C
 </details>
 
 
-</details>
-
 <details>
 <summary>Evaluation</summary>
 
