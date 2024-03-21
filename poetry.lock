@@ -1538,11 +1538,11 @@ files = [
 [package.dependencies]
 numpy = [
     {version = ">=1.21.0", markers = "python_version <= \"3.9\" and platform_system == \"Darwin\" and platform_machine == \"arm64\" and python_version >= \"3.8\""},
+    {version = ">=1.23.5", markers = "python_version >= \"3.11\" and python_version < \"3.12\""},
     {version = ">=1.21.4", markers = "python_version >= \"3.10\" and platform_system == \"Darwin\" and python_version < \"3.11\""},
     {version = ">=1.21.2", markers = "platform_system != \"Darwin\" and python_version >= \"3.10\" and python_version < \"3.11\""},
     {version = ">=1.19.3", markers = "platform_system == \"Linux\" and platform_machine == \"aarch64\" and python_version >= \"3.8\" and python_version < \"3.10\" or python_version > \"3.9\" and python_version < \"3.10\" or python_version >= \"3.9\" and platform_system != \"Darwin\" and python_version < \"3.10\" or python_version >= \"3.9\" and platform_machine != \"arm64\" and python_version < \"3.10\""},
     {version = ">=1.17.3", markers = "(platform_system != \"Darwin\" and platform_system != \"Linux\") and python_version >= \"3.8\" and python_version < \"3.9\" or platform_system != \"Darwin\" and python_version >= \"3.8\" and python_version < \"3.9\" and platform_machine != \"aarch64\" or platform_machine != \"arm64\" and python_version >= \"3.8\" and python_version < \"3.9\" and platform_system != \"Linux\" or (platform_machine != \"arm64\" and platform_machine != \"aarch64\") and python_version >= \"3.8\" and python_version < \"3.9\""},
-    {version = ">=1.23.5", markers = "python_version >= \"3.11\" and python_version < \"3.12\""},
 ]
 
 [[package]]
@@ -1697,8 +1697,8 @@ files = [
 [package.dependencies]
 numpy = [
     {version = ">=1.20.3", markers = "python_version < \"3.10\""},
-    {version = ">=1.21.0", markers = "python_version >= \"3.10\" and python_version < \"3.11\""},
     {version = ">=1.23.2", markers = "python_version >= \"3.11\""},
+    {version = ">=1.21.0", markers = "python_version >= \"3.10\" and python_version < \"3.11\""},
 ]
 python-dateutil = ">=2.8.2"
 pytz = ">=2020.1"
@@ -2860,7 +2860,7 @@ files = [
 
 [[package]]
 name = "ultralytics"
-version = "8.0.228"
+version = "8.1.30"
 description = "Ultralytics YOLOv8 for SOTA object detection, multi-object tracking, instance segmentation, pose estimation and image classification."
 optional = false
 python-versions = ">=3.8"
@@ -2869,7 +2869,6 @@ develop = false
 
 [package.dependencies]
 matplotlib = ">=3.3.0"
-numpy = ">=1.22.2"
 opencv-python = ">=4.6.0"
 pandas = ">=1.1.4"
 pillow = ">=7.1.2"
@@ -2885,14 +2884,17 @@ torchvision = ">=0.9.0"
 tqdm = ">=4.64.0"
 
 [package.extras]
-dev = ["check-manifest", "coverage", "ipython", "mkdocs-material", "mkdocs-redirects", "mkdocs-ultralytics-plugin (>=0.0.34)", "mkdocstrings[python]", "pre-commit", "pytest", "pytest-cov"]
-export = ["coremltools (>=7.0)", "jax (<=0.4.21)", "jaxlib (<=0.4.21)", "openvino-dev (>=2023.0)", "tensorflow (<=2.13.1)", "tensorflowjs"]
+dev = ["check-manifest", "coverage[toml]", "ipython", "mkdocs-jupyter", "mkdocs-material (>=9.5.9)", "mkdocs-redirects", "mkdocs-ultralytics-plugin (>=0.0.44)", "mkdocstrings[python]", "pre-commit", "pytest", "pytest-cov"]
+explorer = ["duckdb (<=0.9.2)", "lancedb", "streamlit"]
+export = ["coremltools (>=7.0)", "onnx (>=1.12.0)", "openvino (>=2024.0.0)", "tensorflow (<=2.13.1)", "tensorflowjs (>=3.9.0)"]
+extra = ["albumentations (>=1.0.3)", "hub-sdk (>=0.0.2)", "ipython", "pycocotools (>=2.0.7)"]
+logging = ["comet", "dvclive (>=2.12.0)", "tensorboard (>=2.13.0)"]
 
 [package.source]
 type = "git"
-url = "https://github.com/mikel-brostrom/ultralytics.git"
+url = "https://github.com/PaoloCappelli/ultralytics.git"
 reference = "HEAD"
-resolved_reference = "6d5a653254cd578ce0ab4e9270bdbecabee70c52"
+resolved_reference = "f4aab85546e686ff0bc608e16814b6fd0ffa7781"
 
 [[package]]
 name = "urllib3"
@@ -2969,4 +2971,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "41bdc0cfef028768047b8e678c7561f133292f058d4fd18f7ead68ec4f517046"
+content-hash = "a6ff8352ba7f6f09fca5cbfb6c07d8dd29d0e3c727c2b1e971435e27b9143c71"

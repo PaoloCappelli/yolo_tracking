@@ -57,7 +57,7 @@ pytest-cov = "^4.1.0"
 
 
 [tool.poetry.group.yolo.dependencies]
-ultralytics = {git = "https://github.com/mikel-brostrom/ultralytics.git"}
+ultralytics = {git = "https://github.com/PaoloCappelli/ultralytics.git"}
 
 
 [tool.poetry.group.export.dependencies]
