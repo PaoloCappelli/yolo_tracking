@@ -58,7 +58,7 @@ def on_predict_start(predictor, persist=False):
 def run(args):
 
     yolo = YOLO(
-        args.yolo_model if 'yolov8' in str(args.yolo_model) else 'yolov8n.pt',
+        args.yolo_model if ('yolov8' in str(args.yolo_model) or 'yolov9' in str(args.yolo_model)) else 'yolov8n.pt',
     )
 
     results = yolo.track(
@@ -85,7 +85,7 @@ def run(args):
 
     yolo.add_callback('on_predict_start', partial(on_predict_start, persist=True))
 
-    if 'yolov8' not in str(args.yolo_model):
+    if 'yolov8' not in str(args.yolo_model) and 'yolov9' not in str(args.yolo_model):
         # replace yolov8 model
         m = get_yolo_inferer(args.yolo_model)
         model = m(
